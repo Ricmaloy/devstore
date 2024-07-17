@@ -20,7 +20,7 @@ export const contentType = 'image/png'
 async function getProduct(slug: string): Promise<Product> {
   const response = await api(`/products/${slug}`, {
     next: {
-      revalidate: 60 * 60, // 1 hour
+      revalidate: 10, // 10 seconds
     },
   })
 
@@ -49,7 +49,11 @@ export default async function OgImage({
           flexDirection: 'column',
         }}
       >
-        <img src={productImageURL} alt="" style={{ width: '100%' }} />
+        <img
+          src={productImageURL}
+          alt=""
+          style={{ width: '100%', height: '100%' }}
+        />
       </div>
     ),
     {
