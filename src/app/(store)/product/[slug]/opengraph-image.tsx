@@ -9,7 +9,7 @@ import { ImageResponse } from 'next/og'
 export const runtime = 'edge'
 
 // Image metadata
-export const alt = 'About Acme'
+export const alt = 'Compre na Devstore!'
 export const size = {
   width: 1200,
   height: 630,
@@ -29,7 +29,6 @@ async function getProduct(slug: string): Promise<Product> {
   return products
 }
 
-// Image generation
 export default async function OgImage({
   params,
 }: {
@@ -41,7 +40,6 @@ export default async function OgImage({
 
   return new ImageResponse(
     (
-      // ImageResponse JSX element
       <div
         style={{
           background: colors.zinc[950],
@@ -54,10 +52,7 @@ export default async function OgImage({
         <img src={productImageURL} alt="" style={{ width: '100%' }} />
       </div>
     ),
-    // ImageResponse options
     {
-      // For convenience, we can re-use the exported opengraph-image
-      // size config to also set the ImageResponse's width and height.
       ...size,
     },
   )

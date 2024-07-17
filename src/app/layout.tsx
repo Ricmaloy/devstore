@@ -8,7 +8,7 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL('http://localhost:3000'),
+  metadataBase: new URL('https://devstore-nine-mu.vercel.app/'),
   title: {
     template: '%s | devstore',
     default: 'devstore',
