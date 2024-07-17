@@ -4,14 +4,6 @@ import { CartWidget } from './cart-widget'
 import { SearchForm } from './search-form'
 import { Suspense } from 'react'
 
-function SearchBar() {
-  return (
-    <Suspense>
-      <SearchForm />
-    </Suspense>
-  )
-}
-
 export function Header() {
   return (
     <div className="flex items-center justify-between">
@@ -20,7 +12,9 @@ export function Header() {
           devstore
         </Link>
 
-        <SearchBar />
+        <Suspense fallback={null}>
+          <SearchForm />
+        </Suspense>
       </div>
 
       <div className="flex items-center gap-4">
